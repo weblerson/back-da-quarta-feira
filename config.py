@@ -12,7 +12,7 @@ __all__: List[str] = ['Config', 'FastAPI', 'Request', 'GlobalArea']
 class Config:
     def __init__(self) -> None:
         self.__app: FastAPI
-        if config('PROD', cast=bool, default=True):
+        if not config('PROD', cast=bool, default=True):
             self.__app = FastAPI()
         else:
             self.__app = FastAPI(docs_url=None, redoc_url=None)
