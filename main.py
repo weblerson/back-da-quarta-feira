@@ -29,7 +29,7 @@ def get_time(request: Request, area: GlobalArea):
                 'minuto': info.minute,
                 'segundo': info.second,
                 'dia': info.day,
-                'mês': info.month,
+                'mes': info.month,
                 'ano': info.year
             }
         }
