@@ -55,18 +55,19 @@ async function getTime(region, auth) {
     };
     
     const data = {
-        'region': 'America/Manaus'
+        'region': region
     };
-
-    await fetch('https://distaste.deta.dev/time', {
+    
+    const options = {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(response => {
-        console.log(response.body);
-    });
+    };
+
+    const res = await fetch('https://distaste.deta.dev/time', options);
+    const json = await res.json();
+    
+    console.log(json.body);
 } 
 ```
 
